@@ -1,12 +1,20 @@
-import { useState } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage";
+import Cards from "./pages/Cards";
+import Wedding from "./pages/Wedding";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <h1>App</h1>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/cards" element={<Cards />} />
+        <Route path="/wedding" element={<Wedding />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
