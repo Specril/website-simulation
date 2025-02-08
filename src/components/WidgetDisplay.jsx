@@ -41,6 +41,9 @@ const WidgetDisplay = ({ pageName }) => {
     loadWidgets();
   }, [pageName, location.search]);
 
+  const fallbackSrc =
+    "https://cchsthevoice.org/wp-content/uploads/2024/05/02dv1ihoyb3a1.jpg";
+
   return selectedWidget ? (
     <div className="card">
       <h2>{selectedWidget.header}</h2>
@@ -49,7 +52,11 @@ const WidgetDisplay = ({ pageName }) => {
       <p>Page: {selectedWidget.page_name}</p>
       <p>Price: {selectedWidget.price}</p>
       <p>Percent: {selectedWidget.showToPercentage}%</p>
-      <img src={selectedWidget.thumbnail} alt="Widget Thumbnail" />
+      <img
+        src={selectedWidget.thumbnail}
+        alt="Widget Thumbnail"
+        onError={(e) => (e.target.src = fallbackSrc)}
+      />
     </div>
   ) : (
     <p>Loading widget...</p>
