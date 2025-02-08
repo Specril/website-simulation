@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchWidgetsGivenPage } from "../api/api";
+import ExpandableTextBox from "./ExpandableTextBox";
 
 const WidgetDisplay = ({ pageName }) => {
   const [selectedWidget, setSelectedWidget] = useState(null);
@@ -41,9 +42,13 @@ const WidgetDisplay = ({ pageName }) => {
   }, [pageName, location.search]);
 
   return selectedWidget ? (
-    <div className="widget">
+    <div className="card">
       <h2>{selectedWidget.header}</h2>
-      <p>{selectedWidget.text}</p>
+      <ExpandableTextBox text={selectedWidget.text} />
+      <p>ID: {selectedWidget.id}</p>
+      <p>Page: {selectedWidget.page_name}</p>
+      <p>Price: {selectedWidget.price}</p>
+      <p>Percent: {selectedWidget.showToPercentage}%</p>
       <img src={selectedWidget.thumbnail} alt="Widget Thumbnail" />
     </div>
   ) : (
