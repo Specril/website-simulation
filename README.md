@@ -1,8 +1,31 @@
-# React + Vite
+# 🖥️ Website Simulation React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 Objective
+This project is a **React-based website simulation** that dynamically loads widgets from a **Flask API** and supports **A/B testing** to display different widgets based on predefined probabilities.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
+### 🔹 **Dynamic Widget Loading**
+- Fetches **widgets from a Flask API** based on the current page.
+- Supports multiple pages: **Homepage, Cards, and Wedding**.
+
+### 🔹 **A/B Testing Logic**
+- Each widget has a `showToPercentage` value.
+- A **random number (0-100)** determines which widget is displayed.
+- Example logic:
+  - Widget A (70%) → Shows if the number is **30-100**.
+  - Widget B (30%) → Shows if the number is **0-29**.
+
+### 🔹 **Forced Experience (URL Parameter)**
+- Supports **overriding A/B logic** using a URL parameter.
+- Example: https://example.com/homepage?experience=widget2
+
+### 🔹 **Navigation**
+- Smooth transitions between pages.
+- Loads the correct widgets dynamically.
+
+### 🔹 **Mobile-Friendly Design**
+- Works on **mobile, tablet, and desktop**.
+- Uses **responsive CSS** for adaptive layouts.
+
