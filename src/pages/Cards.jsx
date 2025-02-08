@@ -4,7 +4,7 @@ const Cards = () => {
   return (
     <div>
       <h1>Cards</h1>
-      <WidgetDisplay pageName="cards" />
+      <WidgetDisplay pageName="cardspage" />
     </div>
   );
 };

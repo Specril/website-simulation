@@ -3,7 +3,7 @@ import WidgetDisplay from "../components/WidgetDisplay";
 const Homepage = () => {
   return (
     <div>
-      <h1>Homepage</h1>
+      <h1>Home</h1>
       <WidgetDisplay pageName="homepage" />
     </div>
   );

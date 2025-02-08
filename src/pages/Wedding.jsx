@@ -4,7 +4,7 @@ const Wedding = () => {
   return (
     <div>
       <h1>Wedding</h1>
-      <WidgetDisplay pageName="wedding" />
+      <WidgetDisplay pageName="weddingpage" />
     </div>
   );
 };
